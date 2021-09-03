@@ -1,0 +1,12 @@
+type Content @model
+  @auth(rules: [
+    { allow: owner },
+    { allow: public, operations: [read] },
+    { allow: private, operations: [read] }
+  ]) {
+  id: ID!
+  name: String!
+  description: String!
+  image: String
+  owner: String
+}
